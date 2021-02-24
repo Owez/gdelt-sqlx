@@ -1,0 +1,525 @@
+-- https://www.gdeltproject.org/data/lookups/CAMEO.country.txt
+CREATE TYPE country_code AS ENUM (
+    -- West Bank
+    'WSB',
+    -- Baghdad
+    'BAG',
+    -- Gaza Strip
+    'GZS',
+    -- Africa
+    'AFR',
+    -- Asia
+    'ASA',
+    -- Balkans
+    'BLK',
+    -- Caribbean
+    'CRB',
+    -- Caucasus
+    'CAU',
+    -- Central Africa
+    'CFR',
+    -- Central Asia
+    'CAS',
+    -- Central Europe
+    'CEU',
+    -- East Indies
+    'EIN',
+    -- Eastern Africa
+    'EAF',
+    -- Eastern Europe
+    'EEU',
+    -- Europe
+    'EUR',
+    -- Latin America
+    'LAM',
+    -- Middle East
+    'MEA',
+    -- Mediterranean
+    'MDT',
+    -- North Africa
+    'NAF',
+    -- North America
+    'NMR',
+    -- Persian Gulf
+    'PGS',
+    -- Scandinavia
+    'SCN',
+    -- South America
+    'SAM',
+    -- South Asia
+    'SAS',
+    -- Southeast Asia
+    'SEA',
+    -- Southern Africa
+    'SAF',
+    -- West Africa
+    'WAF',
+    -- The West
+    'WST',
+    -- Afghanistan
+    'AFG',
+    -- Aland Islands
+    'ALA',
+    -- Albania
+    'ALB',
+    -- Algeria
+    'DZA',
+    -- American Samoa
+    'ASM',
+    -- Andorra
+    'AND',
+    -- Angola
+    'AGO',
+    -- Anguilla
+    'AIA',
+    -- Antigua and Barbuda
+    'ATG',
+    -- Argentina
+    'ARG',
+    -- Armenia
+    'ARM',
+    -- Aruba
+    'ABW',
+    -- Australia
+    'AUS',
+    -- Austria
+    'AUT',
+    -- Azerbaijan
+    'AZE',
+    -- Bahamas
+    'BHS',
+    -- Bahrain
+    'BHR',
+    -- Bangladesh
+    'BGD',
+    -- Barbados
+    'BRB',
+    -- Belarus
+    'BLR',
+    -- Belgium
+    'BEL',
+    -- Belize
+    'BLZ',
+    -- Benin
+    'BEN',
+    -- Bermuda
+    'BMU',
+    -- Bhutan
+    'BTN',
+    -- Bolivia
+    'BOL',
+    -- Bosnia and Herzegovina
+    'BIH',
+    -- Botswana
+    'BWA',
+    -- Brazil
+    'BRA',
+    -- British Virgin Islands
+    'VGB',
+    -- Brunei Darussalam
+    'BRN',
+    -- Bulgaria
+    'BGR',
+    -- Burkina Faso
+    'BFA',
+    -- Burundi
+    'BDI',
+    -- Cambodia
+    'KHM',
+    -- Cameroon
+    'CMR',
+    -- Canada
+    'CAN',
+    -- Cape Verde
+    'CPV',
+    -- Cayman Islands
+    'CYM',
+    -- Central African Republic
+    'CAF',
+    -- Chad
+    'TCD',
+    -- Chile
+    'CHL',
+    -- China
+    'CHN',
+    -- Columbia
+    'COL',
+    -- Comoros
+    'COM',
+    -- Democratic Republic of the Congo
+    'COD',
+    -- People's Republic of the Congo
+    'COG',
+    -- Cook Islands
+    'COK',
+    -- Costa Rica
+    'CRI',
+    -- Ivory Coast
+    'CIV',
+    -- Croatia
+    'HRV',
+    -- Cuba
+    'CUB',
+    -- Cyprus
+    'CYP',
+    -- Czech Republic
+    'CZE',
+    -- Denmark
+    'DNK',
+    -- Djibouti
+    'DJI',
+    -- Dominica
+    'DMA',
+    -- Dominican Republic
+    'DOM',
+    -- East Timor
+    'TMP',
+    -- Ecuador
+    'ECU',
+    -- Egypt
+    'EGY',
+    -- El Salvador
+    'SLV',
+    -- Equatorial Guinea
+    'GNQ',
+    -- Eritrea
+    'ERI',
+    -- Estonia
+    'EST',
+    -- Ethiopia
+    'ETH',
+    -- Faeroe Islands
+    'FRO',
+    -- Falkland Islands
+    'FLK',
+    -- Fiji
+    'FJI',
+    -- Finland
+    'FIN',
+    -- France
+    'FRA',
+    -- French Guiana
+    'GUF',
+    -- French Polynesia
+    'PYF',
+    -- Gabon
+    'GAB',
+    -- Gambia
+    'GMB',
+    -- Georgia
+    'GEO',
+    -- Germany
+    'DEU',
+    -- Ghana
+    'GHA',
+    -- Gibraltar
+    'GIB',
+    -- Greece
+    'GRC',
+    -- Greenland
+    'GRL',
+    -- Grenada
+    'GRD',
+    -- Guadeloupe
+    'GLP',
+    -- Guam
+    'GUM',
+    -- Guatemala
+    'GTM',
+    -- Guinea
+    'GIN',
+    -- Guinea-Bissau
+    'GNB',
+    -- Guyana
+    'GUY',
+    -- Haiti
+    'HTI',
+    -- Vatican City
+    'VAT',
+    -- Honduras
+    'HND',
+    -- Hong Kong
+    'HKG',
+    -- Hungary
+    'HUN',
+    -- Iceland
+    'ISL',
+    -- India
+    'IND',
+    -- Indonesia
+    'IDN',
+    -- Iran
+    'IRN',
+    -- Iraq
+    'IRQ',
+    -- Ireland
+    'IRL',
+    -- Isle of Man
+    'IMY',
+    -- Israel
+    'ISR',
+    -- Italy
+    'ITA',
+    -- Jamaica
+    'JAM',
+    -- Japan
+    'JPN',
+    -- Jordan
+    'JOR',
+    -- Kazakhstan
+    'KAZ',
+    -- Kenya
+    'KEN',
+    -- Kiribati
+    'KIR',
+    -- North Korea
+    'PRK',
+    -- South Korea
+    'KOR',
+    -- Kuwait
+    'KWT',
+    -- Kyrgyzstan
+    'KGZ',
+    -- Laos
+    'LAO',
+    -- Latvia
+    'LVA',
+    -- Lebanon
+    'LBN',
+    -- Lesotho
+    'LSO',
+    -- Liberia
+    'LBR',
+    -- Libya
+    'LBY',
+    -- Liechtenstein
+    'LIE',
+    -- Lithuania
+    'LTU',
+    -- Luxembourg
+    'LUX',
+    -- Macao
+    'MAC',
+    -- Macedonia
+    'MKD',
+    -- Madagascar
+    'MDG',
+    -- Malawi
+    'MWI',
+    -- Malaysia
+    'MYS',
+    -- Maldives
+    'MDV',
+    -- Mali
+    'MLI',
+    -- Malta
+    'MLT',
+    -- Marshall Islands
+    'MHL',
+    -- Martinique
+    'MTQ',
+    -- Mauritania
+    'MRT',
+    -- Mauritius
+    'MUS',
+    -- Mayotte
+    'MYT',
+    -- Mexico
+    'MEX',
+    -- Micronesia
+    'FSM',
+    -- Moldova
+    'MDA',
+    -- Monaco
+    'MCO',
+    -- Mongolia
+    'MNG',
+    -- Montenegro
+    'MTN',
+    -- Montserrat
+    'MSR',
+    -- Morocco
+    'MAR',
+    -- Mozambique
+    'MOZ',
+    -- Myanmar
+    'MMR',
+    -- Namibia
+    'NAM',
+    -- Nauru
+    'NRU',
+    -- Nepal
+    'NPL',
+    -- Netherlands
+    'NLD',
+    -- Netherlands Antilles
+    'ANT',
+    -- New Caledonia
+    'NCL',
+    -- New Zealand
+    'NZL',
+    -- Nicaragua
+    'NIC',
+    -- Niger
+    'NER',
+    -- Nigeria
+    'NGA',
+    -- Niue
+    'NIU',
+    -- Norfolk Island
+    'NFK',
+    -- Northern Mariana Islands
+    'MNP',
+    -- Norway
+    'NOR',
+    -- Occupied Palestinian Territory
+    'PSE',
+    -- Oman
+    'OMN',
+    -- Pakistan
+    'PAK',
+    -- Palau
+    'PLW',
+    -- Panama
+    'PAN',
+    -- Papua New Guinea
+    'PNG',
+    -- Paraguay
+    'PRY',
+    -- Peru
+    'PER',
+    -- Philippines
+    'PHL',
+    -- Pitcairn
+    'PCN',
+    -- Poland
+    'POL',
+    -- Portugal
+    'PRT',
+    -- Puerto Rico
+    'PRI',
+    -- Qatar
+    'QAT',
+    -- Runion
+    'REU',
+    -- Romania
+    'ROM',
+    -- Russia
+    'RUS',
+    -- Rwanda
+    'RWA',
+    -- Saint Helena
+    'SHN',
+    -- Saint Kitts-Nevis
+    'KNA',
+    -- Saint Lucia
+    'LCA',
+    -- Saint Pierre and Miquelon
+    'SPM',
+    -- Saint Vincent and the Grenadines
+    'VCT',
+    -- Samoa
+    'WSM',
+    -- San Marino
+    'SMR',
+    -- Sao Tome and Principe
+    'STP',
+    -- Saudi Arabia
+    'SAU',
+    -- Senegal
+    'SEN',
+    -- Serbia
+    'SRB',
+    -- Seychelles
+    'SYC',
+    -- Sierra Leone
+    'SLE',
+    -- Singapore
+    'SGP',
+    -- Slovakia
+    'SVK',
+    -- Slovenia
+    'SVN',
+    -- Solomon Islands
+    'SLB',
+    -- Somalia
+    'SOM',
+    -- South Africa
+    'ZAF',
+    -- Spain
+    'ESP',
+    -- Sri Lanka
+    'LKA',
+    -- Sudan
+    'SDN',
+    -- Suriname
+    'SUR',
+    -- Svalbard and Jan Mayen Islands
+    'SJM',
+    -- Swaziland
+    'SWZ',
+    -- Sweden
+    'SWE',
+    -- Switzerland
+    'CHE',
+    -- Syria
+    'SYR',
+    -- Taiwan
+    'TWN',
+    -- Tajikistan
+    'TJK',
+    -- Tanzania
+    'TZA',
+    -- Thailand
+    'THA',
+    -- Togo
+    'TGO',
+    -- Tokelau
+    'TKL',
+    -- Tonga
+    'TON',
+    -- Trinidad and Tobago
+    'TTO',
+    -- Tunisia
+    'TUN',
+    -- Turkey
+    'TUR',
+    -- Turkmenistan
+    'TKM',
+    -- Turks and Caicos Islands
+    'TCA',
+    -- Tuvalu
+    'TUV',
+    -- Uganda
+    'UGA',
+    -- Ukraine
+    'UKR',
+    -- United Arab Emirates
+    'ARE',
+    -- United Kingdom
+    'GBR',
+    -- United States
+    'USA',
+    -- United States Virgin Islands
+    'VIR',
+    -- Uruguay
+    'URY',
+    -- Uzbekistan
+    'UZB',
+    -- Vanuatu
+    'VUT',
+    -- Venezuela
+    'VEN',
+    -- Vietnam
+    'VNM',
+    -- Wallis and Futuna Islands
+    'WLF',
+    -- Western Sahara
+    'ESH',
+    -- Yemen
+    'YEM',
+    -- Zambia
+    'ZMB',
+    -- Zimbabwe
+    'ZWE',
+);

@@ -1,0 +1,6 @@
+CREATE TABLE events (
+    id INTEGER PRIMARY KEY,
+    date TIMESTAMP WITH TIMEZONE NOT NULL,
+    actor_1 INTEGER REFERENCES actors(id),
+    actor_2 INTEGER REFERENCES actors(id),
+);
