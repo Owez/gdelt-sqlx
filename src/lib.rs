@@ -1,5 +1,4 @@
-//! High-level sqlx bindings for the GDELT 2.0 dataset, allowing raw input from
-//! a downloaded source
+//! High-level sqlx bindings for the GDELT 2.0 dataset
 //!
 //! # Status
 //!
