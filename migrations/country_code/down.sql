@@ -1,1 +1,0 @@
-DROP TYPE country_code;
