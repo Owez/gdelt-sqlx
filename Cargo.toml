@@ -1,9 +1,8 @@
 [package]
 name = "gdelt-sqlx"
+description= "High-level sqlx bindings for the GDELT 2.0 dataset, allowing raw input from a downloaded source"
 version = "0.1.0"
 authors = ["Owez <root@ogriffiths.com>"]
+readme = "README.md"
+license = "MIT"
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[dependencies]
